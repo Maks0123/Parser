@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Parser2.Models.Laptop>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Laptops from Kharkov Plaza</title>
+</head>
+<body>
+    <h3>Laptops</h3>
+    <table  class="table-condensed">
+        <tr>
+            <td scope="col">Name</td>
+            <td scope="col">Image</td>
+            <td scope="col">Price</td>
+            <td scope="col"></td>
+        </tr>
+        @foreach (var laptop in Model)
+        {
+        <tr>
+            <td scope="col">@laptop.Name</td>
+            <td scope="col">@laptop.Image</td>
+            <td scope="col">@laptop.Price</td>
+            <td scope="col"><a href="~/Home/More/@laptop.Id">More</a></td>
+        </tr>
+        }
+    </table>
+</body>
+</html>
